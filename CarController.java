@@ -47,21 +47,20 @@ public class CarController {
         public void actionPerformed(ActionEvent e) {
             for (Car car : cars) {
                 car.move();
-                int x = (int) Math.round(car.getPosition().getX());
-                int y = (int) Math.round(car.getPosition().getY());
+                int x = (int) Math.round(car.position().getX());                //ASK TA! Position values protected, how do we access?
+                int y = (int) Math.round(car.position().getY());                //ASK TA! Position values protected, how do we access?
                 frame.drawPanel.moveit(x, y);
                 // repaint() calls the paintComponent method of the panel
                 frame.drawPanel.repaint();
-            }*/
+            }
         }
     }
 
     // Calls the gas method for each car once
     void gas(int amount) {
         double gas = ((double) amount) / 100;
-       /* for (ACar car : cars
-                ) {
-            car.gas(gas);
-        }*/
+        for (Car car : cars){
+            car.transform.gas(gas);                                             //ASK TA! Position values protected, how do we access?
+        }
     }
 }
