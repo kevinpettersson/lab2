@@ -1,3 +1,5 @@
+package lab2;
+import lab1.*;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,8 +22,8 @@ public class CarController {
 
     // The frame that represents this instance View of the MVC pattern
     CarView frame;
-    // A list of cars, modify if needed
-    // ArrayList<ACar> cars = new ArrayList<>();
+    //A list of cars, modify if needed
+    ArrayList<Car> cars = new ArrayList<>();
 
     //methods:
 
@@ -29,10 +31,10 @@ public class CarController {
         // Instance of this class
         CarController cc = new CarController();
 
-        // cc.cars.add(new Volvo240());
+        cc.cars.add(new Volvo240());
 
         // Start a new view and send a reference of self
-        cc.frame = new CarView("CarSim 1.0", cc);
+        cc.frame = new CarView("Vroom Vroom Car go Zoom Zoom", cc);
 
         // Start the timer
         cc.timer.start();
@@ -43,7 +45,7 @@ public class CarController {
     * */
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
- /*           for (ACar car : cars) {
+            for (Car car : cars) {
                 car.move();
                 int x = (int) Math.round(car.getPosition().getX());
                 int y = (int) Math.round(car.getPosition().getY());

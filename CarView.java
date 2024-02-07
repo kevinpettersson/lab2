@@ -1,3 +1,6 @@
+package lab2;
+
+import lab1.*;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
